@@ -1,0 +1,106 @@
+body{
+            
+    font-family: Arial, sans-serif;
+}
+.marksheet {
+border: 2px solid #000;
+width: 45%;
+margin-left: 830px;
+margin-top: -815px;
+padding: 15px;
+height: 780px;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+
+}
+.header, .footer {
+text-align: center;
+margin-bottom: 20px;
+}
+.header h1, .footer h2 {
+margin: 0;
+}
+.info, .subjects {
+width: 100%;
+border-collapse: collapse;
+}
+.info th, .info td, .subjects th, .subjects td {
+border: 1px solid #000;
+padding: 5px;
+text-align: left;
+}
+.subjects th, .subjects td {
+text-align: center;
+}
+.info th {
+width: 30%;
+}
+.left-box{
+border: 2px solid #000;
+width: 45%;
+padding: 15px;
+height: 780px;
+box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+margin-left: 40px;
+}
+.left-box h1
+{
+margin-top: -5px;
+}
+.button {
+position: relative;
+width: 150px;
+height: 40px;
+cursor: pointer;
+display: flex;
+align-items: center;
+border: 1px solid #826AFC;
+background-color: #826AFC;
+overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+transition: all 0.3s;
+}
+
+.button .button__text {
+transform: translateX(22px);
+color: #fff;
+font-weight: 600;
+}
+
+.button .button__icon {
+position: absolute;
+transform: translateX(109px);
+height: 100%;
+width: 39px;
+background-color: #826AFC;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.button .svg {
+width: 20px;
+fill: #fff;
+}
+
+.button:hover {
+background: #826AFC;
+}
+
+.button:hover .button__text {
+color: transparent;
+}
+
+.button:hover .button__icon {
+width: 148px;
+transform: translateX(0);
+}
+
+.button:active .button__icon {
+background-color: #826AFC;
+}
+
+.button:active {
+border: 1px solid #6153a9;
+}

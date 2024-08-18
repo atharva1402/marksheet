@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student info</title>
+    <style>
+        body{
+            
+            font-family: Arial, sans-serif;
+        }
+  .marksheet {
+    border: 2px solid #000;
+    width: 45%;
+    margin-left: 830px;
+    margin-top: -815px;
+    padding: 15px;
+    height: 780px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    
+  }
+  .header, .footer {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .header h1, .footer h2 {
+    margin: 0;
+  }
+  .info, .subjects {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .info th, .info td, .subjects th, .subjects td {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: left;
+  }
+  .subjects th, .subjects td {
+    text-align: center;
+  }
+  .info th {
+    width: 30%;
+  }
+  .left-box{
+    border: 2px solid #000;
+    width: 45%;
+    padding: 15px;
+    height: 780px;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
+    margin-left: 40px;
+  }
+  .left-box h1
+  {
+    margin-top: -5px;
+  }
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #826AFC;
+  background-color: #826AFC;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(22px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #826AFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.button:hover {
+  background: #826AFC;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #826AFC;
+}
+
+.button:active {
+  border: 1px solid #6153a9;
+}
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+        <div class="left-box">
+            
+            <table>
+                <center><h1>Student Information</h1></center>
+                <tr>
+                    <tr>
+                        
+                    <td><label style="font-size: 18px; " >Candidate's Full Name:</label></td>
+                    <td><label style="font-size: 18px; margin-left: 120px; " >Candidate's Mother's Name:</label></td>
+                    </tr>
+                    <tr>
+                    <td><input style="height: 38px; width: 290px;" type="text" placeholder="Enter your name" id="name"></td>
+                    <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="text" placeholder="Enter your mother name" id="mother"></td>
+                    </tr>
+                    <tr>
+                    
+                    <td><br>
+                        <label style="font-size: 18px;" >Stream:</label></td>
+                    <td><br>
+                        <label style="font-size: 18px; margin-left: 120px; " >Seat No:</label></td>
+                    </tr>
+                    
+                    <tr>
+                        <td><input style="height: 38px; width: 290px;" type="text" placeholder="Enter your stream" id="stream"></td>
+                        <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="text" placeholder="Enter your seatno" id="seatno"></td>
+                    </tr>  
+                    <td><br>
+                        <label style=" font-size: 18px; " >Center No:</label></td>
+                    <td><br>
+                        <label style=" font-size: 18px; margin-left: 120px; " >Month & Year of Exam:</label></td>
+                    </tr>
+                    <tr>
+                        <td><input style="height: 38px; width: 290px;" type="number" placeholder="Enter your center no" id="center"></td>
+                        <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="text" placeholder="Enter your month & year of exam" id="month"></td>
+                    </tr> 
+                    <td><br>
+                      <label style=" font-size: 18px; " >School Name:</label></td>
+                  <td><br>
+                      <label style=" font-size: 18px; margin-left: 120px; " >School No:</label></td>
+                  </tr> 
+                  <tr>
+                    <td><input style=" height: 38px; width: 290px;" type="text" placeholder="Enter your school" id="schoolname"></td>
+                    <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="number" placeholder="Enter your school no" id="schoolno"></td>
+                </tr>
+                    <td><br>
+                        <label style=" font-size: 18px; " >English:</label></td>
+                    <td><br>
+                        <label style=" font-size: 18px; margin-left: 120px; " >Marathi:</label></td>
+                    </tr> 
+                    <tr>
+                        <td><input style=" height: 38px; width: 290px;" type="number" placeholder="Enter your english marks" id="english"></td>
+                        <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="number" placeholder="Enter your marathi marks" id="marathi"></td>
+                    </tr>
+                    <td><br>
+                        <label style=" font-size: 18px;" >History:</label></td>
+                    <td><br>
+                        <label style=" font-size: 18px; margin-left: 120px; ">Geography:</label></td>
+                    </tr> 
+                    <tr>
+                        <td><input style="height: 38px; width: 290px;" type="number" placeholder="Enter your History  marks" id="History"></td>
+                        <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="number" placeholder="Enter your Geography marks" id="Geography"></td>
+                    </tr>
+                <td><br>
+                  <label style=" font-size: 18px;" >Political Science:</label></td>
+              <td><br>
+                  <label style=" font-size: 18px; margin-left: 120px; ">Sociology:</label></td>
+              </tr> 
+                <tr>
+                  <td><input style="height: 38px; width: 290px;" type="number" placeholder="Enter your Political Science marks" id="political"></td>
+                  <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="number" placeholder="Enter your Sociology marks" id="sociology"></td>
+              </tr>
+                    <tr>
+                        <td><br><br>
+                            <button style=" height: 45px; width: 290px;background-color: #826AFC; 
+                            color: white; 
+                            font-weight: bold; 
+                            font-size: large; 
+                            border-radius: 10px;
+                            border:none;" onclick="myfun()" >Submit</button></td>
+                        <td><br><br>
+                            <button style="margin-left: 120px; height: 45px; width: 290px; background-color: #826AFC; 
+                            color: white; 
+                            font-weight: bold; 
+                            font-size: large; 
+                            border-radius: 10px;
+                            border:none;" type="reset" >Clear All</button></td>
+                    </tr>
+                </tr>
+            </table>
+        </div>
+        <div class="marksheet" id="marksheet">
+            <div class="header">
+                <h1>Maharashtra State Board Of Secondary and Higher Secondary Education, Pune</h1>
+                <h2>Higher Secondary Certificate Examination - Statement of Marks</h2>
+                <p>Division: Mumbai</p>
+              </div>
+              <table class="info">
+                <tr>
+                  <th>Stream</th>
+                  <td id="s_stream"></td>
+                </tr>
+                <tr>
+                  <th>Seat No.</th>
+                  <td id="s_seatno"></td>
+                  <th>Centre No.</th>
+                  <td id="c_center"></td>
+                </tr>
+                <tr>
+                  <th id="s_schoolname"></th>
+                  <td colspan="3" id="s_schoolno"></td>
+                </tr>
+                <tr>
+                  <th>Month & Year of Exam</th>
+                  <td id="m_month"></td>
+                </tr>
+                <tr>
+                  <th>Candidate's Full Name</th>
+                  <td colspan="3" id="n_name" ></td>
+                </tr>
+                <tr>
+                  <th>Candidate's Mother's Name</th>
+                  <td colspan="3" id="m_mother"></td>
+                </tr>
+              </table>
+              <br>
+              <table class="subjects">
+                <tr>
+                  <th>Subject Name</th>
+                  <th>Medium</th>
+                  <th>Marks</th>
+                  <th>Subject code</th>
+                  <th>Subject grade</th>
+                </tr>
+                <tr>
+                  <td>ENGLISH</td>
+                  <td>ENG</td>
+                  <td id="e_english"></td>
+                  <td>4010</td>
+                  <td id="e_grade"></td>
+                </tr>
+                <tr>
+                  <td>MARATHI</td>
+                  <td>MAR</td>
+                  <td id="m_marathi"></td>
+                  <td>4020</td>
+                  <td id="ma_grade"></td>
+                </tr>
+                <tr>
+                  <td>HISTORY</td>
+                  <td>ENG</td>
+                  <td id="h_history"></td>
+                  <td>4030</td>
+                  <td id="h_grade"></td>
+                </tr>
+                <tr>
+                  <td>GEOGRAPHY</td>
+                  <td>ENG</td>
+                  <td id="g_geography"></td>
+                  <td>4040</td>
+                  <td id="g_grade"></td>
+                </tr>
+                <tr>
+                  <td>POLITICAL SCIENCE</td>
+                  <td>ENG</td>
+                  <td id="p_political"></td>
+                  <td>3020</td>
+                  <td id="po_grade"></td>
+                </tr>
+                <tr>
+                  <td>SOCIOLOGY</td>
+                  <td>ENG</td>
+                  <td id="s_sociology"></td>
+                  <td>2010</td>
+                  <td id="so_grade"></td>
+                </tr>
+              </table>
+              <br>
+              <div class="footer">
+                <h2>Result: </h2>
+                <p>Percentage:<p1 id="p_percentage"></p1> </p>
+                <p>Total Marks:<p1 id="t_total"></p1> </p>
+                <p>Grade:<p1 id="per_grade"></p1></p>
+            <center>
+              <button class="button"type="button" onclick="downfun('marksheet')">
+              <span class="button__text">Download</span>
+              <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" id="bdd05811-e15d-428c-bb53-8661459f9307" data-name="Layer 2" class="svg"><path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path><path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path><path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path></svg></span>
+              </button>
+            </center>
+              </div>
+        </div>
+    </div>
+    <script>
+        function myfun(){
+            var nm= document.getElementById("name").value;
+            var mo=document.getElementById("mother").value;
+            var st=document.getElementById("stream").value;
+            var sn=document.getElementById("seatno").value;
+            var cn=parseInt(document.getElementById("center").value);
+            var mn=document.getElementById("month").value;
+            var scn=document.getElementById("schoolname").value;
+            var son=parseInt(document.getElementById("schoolno").value);
+            var en=parseInt(document.getElementById("english").value);
+            var ma=parseInt(document.getElementById("marathi").value);
+            var ge=parseInt(document.getElementById("Geography").value);
+            var hi=parseInt(document.getElementById("History").value);
+            var po=parseInt(document.getElementById("political").value);
+            var so=parseInt(document.getElementById("sociology").value);
+            
+              document.getElementById("n_name").innerHTML=""+nm;
+              document.getElementById("m_mother").innerHTML=""+mo;
+              document.getElementById("s_stream").innerHTML=""+st;
+              document.getElementById("s_seatno").innerHTML=""+sn;
+              document.getElementById("c_center").innerHTML=""+cn;
+              document.getElementById("m_month").innerHTML=""+mn;
+              document.getElementById("s_schoolname").innerHTML=""+scn;
+              document.getElementById("s_schoolno").innerHTML=""+son;
+              document.getElementById("e_english").innerHTML=""+en;
+              document.getElementById("m_marathi").innerHTML=""+ma;
+              document.getElementById("g_geography").innerHTML=""+ge;
+              document.getElementById("h_history").innerHTML=""+hi;
+              document.getElementById("p_political").innerHTML=""+po;
+              document.getElementById("s_sociology").innerHTML=""+so;
+              document.getElementById("p_percentage").innerHTML=""+(en+ma+ge+hi+po+so)/600*100+"%";
+              document.getElementById("t_total").innerHTML=""+(en+ma+ge+hi+po+so);
+
+              //english grade
+              if((en<=20)){
+                document.getElementById("e_grade").innerHTML="E";
+              }
+              else if((en>=21)&&(en<=40)){
+                document.getElementById("e_grade").innerHTML="D";
+              }
+              else if((en>=41)&&(en<=60)){
+                document.getElementById("e_grade").innerHTML="C";
+              }
+              else if((en>=61)&&(en<=80)){
+                document.getElementById("e_grade").innerHTML="B";
+              }
+              else if((en>=81)&&(en<=100)){
+                document.getElementById("e_grade").innerHTML="A";
+              }
+
+              //marathi grade
+              if((ma<=20)){
+                document.getElementById("ma_grade").innerHTML="E";
+              }
+              else if((ma>=21)&&(ma<=40)){
+                document.getElementById("ma_grade").innerHTML="D";
+              }
+              else if((ma>=41)&&(ma<=60)){
+                document.getElementById("ma_grade").innerHTML="C";
+              }
+              else if((ma>=61)&&(ma<=80)){
+                document.getElementById("ma_grade").innerHTML="B";
+              }
+              else if((ma>=81)&&(ma<=100)){
+                document.getElementById("ma_grade").innerHTML="A";
+              }
+
+              //history grade
+              if((hi<=20)){
+                document.getElementById("h_grade").innerHTML="E";
+                }
+                else if((hi>=21)&&(hi<=40)){
+                  document.getElementById("h_grade").innerHTML="D";
+                  }
+                  else if((hi>=41)&&(hi<=60)){
+                    document.getElementById("h_grade").innerHTML="C";
+                  }
+                  else if((hi>=61)&&(hi<=80)){
+                    document.getElementById("h_grade").innerHTML="B";
+                  }
+                  else if((hi>=81)&&(hi<=100)){
+                    document.getElementById("h_grade").innerHTML="A";
+                  }
+
+                  //Geography grade
+                  if((ge<=20)){
+                    document.getElementById("g_grade").innerHTML="E";
+                  }
+                  else if((ge>=21)&&(ge<=40)){
+                    document.getElementById("g_grade").innerHTML="D";
+                  }
+                  else if((ge>=41)&&(ge<=60)){
+                    document.getElementById("g_grade").innerHTML="C";
+                  }
+                  else if((ge>=61)&&(ge<=80)){
+                    document.getElementById("g_grade").innerHTML="B";
+                  }
+                  else if((ge>=81)&&(ge<=100)){
+                    document.getElementById("g_grade").innerHTML="B";
+                  }
+
+                  
+                   //Political Science
+                   if((po<=20)){
+                    document.getElementById("po_grade").innerHTML="E";
+                  }
+                  else if((po>=21)&&(po<=40)){
+                    document.getElementById("po_grade").innerHTML="D";
+                  }
+                  else if((po>=41)&&(po<=60)){
+                    document.getElementById("po_grade").innerHTML="C";
+                  }
+                  else if((po>=61)&&(po<=80)){
+                    document.getElementById("po_grade").innerHTML="B";
+                  }
+                  else if((po>=81)&&(po<=100)){
+                    document.getElementById("po_grade").innerHTML="A";
+                  }
+
+                  //Sociology grade
+                  if((so<=20)){
+                    document.getElementById("so_grade").innerHTML="E";
+                  }
+                  else if((so>=21)&&(so<=40)){
+                    document.getElementById("so_grade").innerHTML="D";
+                  }
+                  else if((so>=41)&&(so<=60)){
+                    document.getElementById("so_grade").innerHTML="C";
+                  }
+                  else if((so>=61)&&(so<=80)){
+                    document.getElementById("so_grade").innerHTML="B";
+                  }
+                  else if((so>=81)&&(so<=100)){
+                    document.getElementById("so_grade").innerHTML="A";
+                  }
+
+                  //grade
+                  if(((en+ma+ge+hi+po+so)/600*100<=20)){
+                    document.getElementById("per_grade").innerHTML="E";
+                  }
+                  else if(((en+ma+ge+hi+po+so)/600*100>=21)&&((en+ma+ge+hi+po+so)/600*100<=40)){
+                    document.getElementById("per_grade").innerHTML="D";
+                  }
+                  else if(((en+ma+ge+hi+po+so)/600*100>=41)&&((en+ma+ge+hi+po+so)/600*100<=60)){
+                    document.getElementById("per_grade").innerHTML="C";
+                  }
+                  else if(((en+ma+ge+hi+po+so)/600*100>=61)&&((en+ma+ge+hi+po+so)/600*100<=80)){
+                    document.getElementById("per_grade").innerHTML="B";
+                  }
+                  else if(((en+ma+ge+hi+po+so)/600*100>=81)&&((en+ma+ge+hi+po+so)/600*100<=100)){
+                    document.getElementById("per_grade").innerHTML="A";
+                  }      
+                    
+        }
+        function downfun(marksheet){
+          var printContents = document.getElementById(marksheet).innerHTML;
+          var originalContents = document.body.innerHTML;
+         document.body.innerHTML = printContents;
+         window.print();
+         document.body.innerHTML = originalContents;
+          
+        }
+    </script> 
+</body>
+</html>
