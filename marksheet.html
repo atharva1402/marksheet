@@ -13,9 +13,9 @@
     border: 2px solid #000;
     width: 45%;
     margin-left: 830px;
-    margin-top: -815px;
+    margin-top: -863px;
     padding: 15px;
-    height: 780px;
+    height: 830px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
     
   }
@@ -26,7 +26,12 @@
   .header h1, .footer h2 {
     margin: 0;
   }
-  .info, .subjects {
+  .info {
+    margin-top: -193px;
+    width: 72%;
+    border-collapse: collapse;
+  }
+  .subjects{
     width: 100%;
     border-collapse: collapse;
   }
@@ -39,13 +44,13 @@
     text-align: center;
   }
   .info th {
-    width: 30%;
+    width: 45%;
   }
   .left-box{
     border: 2px solid #000;
     width: 45%;
     padding: 15px;
-    height: 780px;
+    height: 830px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.1);
     margin-left: 40px;
   }
@@ -110,6 +115,18 @@
 
 .button:active {
   border: 1px solid #6153a9;
+}
+.photo{
+  width: 1.7in;
+  height: 2in;
+  margin-left: 550px;
+  
+  
+}
+.phototable{
+  border: 1px solid #000;
+  width:1.7in;
+  height:2in ;
 }
         
     </style>
@@ -188,15 +205,24 @@
                   <td><input style="height: 38px; width: 290px;" type="number" placeholder="Enter your Political Science marks" id="political"></td>
                   <td><input style="margin-left: 120px;height: 38px;width: 290px;" type="number" placeholder="Enter your Sociology marks" id="sociology"></td>
               </tr>
+              <tr>
+                <td>
+                  <br><input style="height: 38px; width: 290px;" type="file" onchange="previewFile()">
+                </td>
+                  
+              </tr>
+            
                     <tr>
-                        <td><br><br>
+                        <td>
+                          <br>
                             <button style=" height: 45px; width: 290px;background-color: #826AFC; 
                             color: white; 
                             font-weight: bold; 
                             font-size: large; 
                             border-radius: 10px;
                             border:none;" onclick="myfun()" >Submit</button></td>
-                        <td><br><br>
+                        <td>
+                          <br>
                             <button style="margin-left: 120px; height: 45px; width: 290px; background-color: #826AFC; 
                             color: white; 
                             font-weight: bold; 
@@ -208,10 +234,23 @@
             </table>
         </div>
         <div class="marksheet" id="marksheet">
+          
             <div class="header">
                 <h1>Maharashtra State Board Of Secondary and Higher Secondary Education, Pune</h1>
                 <h2>Higher Secondary Certificate Examination - Statement of Marks</h2>
                 <p>Division: Mumbai</p>
+              </div>
+              <div class="photo">
+                
+                <table class="phototable">
+                  <tr>
+                    <td id="p_photo">
+                    
+                      <center><h4><img src="" height="130px" width="165px" alt="PHOTO"></h4></center></td>
+                  </tr>
+
+                </table>
+
               </div>
               <table class="info">
                 <tr>
@@ -221,9 +260,12 @@
                 <tr>
                   <th>Seat No.</th>
                   <td id="s_seatno"></td>
+                  <tr></tr>
                   <th>Centre No.</th>
                   <td id="c_center"></td>
                 </tr>
+                </tr>
+                
                 <tr>
                   <th id="s_schoolname"></th>
                   <td colspan="3" id="s_schoolno"></td>
@@ -324,6 +366,8 @@
             var hi=parseInt(document.getElementById("History").value);
             var po=parseInt(document.getElementById("political").value);
             var so=parseInt(document.getElementById("sociology").value);
+            
+            
             
               document.getElementById("n_name").innerHTML=""+nm;
               document.getElementById("m_mother").innerHTML=""+mo;
@@ -461,8 +505,9 @@
                   else if(((en+ma+ge+hi+po+so)/600*100>=81)&&((en+ma+ge+hi+po+so)/600*100<=100)){
                     document.getElementById("per_grade").innerHTML="A";
                   }      
+                }
                     
-        }
+        
         function downfun(marksheet){
           var printContents = document.getElementById(marksheet).innerHTML;
           var originalContents = document.body.innerHTML;
@@ -471,6 +516,35 @@
          document.body.innerHTML = originalContents;
           
         }
+      
+        function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+        $('#blah')
+        .attr('src', e.target.result)
+        .width(165)
+        .height(140);
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+function previewFile() {
+  var preview = document.querySelector('img');
+  var file    = document.querySelector('input[type=file]').files[0];
+  var reader  = new FileReader();
+
+  reader.onloadend = function () {
+    preview.src = reader.result;
+  }
+
+  if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    preview.src = "";
+  }
+}
+        
     </script> 
 </body>
 </html>
